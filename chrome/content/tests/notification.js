@@ -24,7 +24,7 @@
       for (let key in info)
         originalInfo[key] = info[key];
 
-      info.addonName = "adblockpluschrome";
+      info.addonName = "adblockcashchrome";
       info.addonVersion = "1.4.1";
       info.application = "chrome";
       info.applicationVersion = "27.0";
@@ -143,7 +143,7 @@
   test("Target selection", function()
   {
     let targets = [
-      ["extension", "adblockpluschrome", true],
+      ["extension", "adblockcashchrome", true],
       ["extension", "adblockplus", false],
       ["extension", "adblockpluschrome2", false],
       ["extensionMinVersion", "1.4", true],
@@ -264,7 +264,7 @@
     testRunner.runScheduledTasks(1);
 
     equal(parameters,
-          "addonName=adblockpluschrome&addonVersion=1.4.1&application=chrome&applicationVersion=27.0&platform=chromium&platformVersion=12.0&lastVersion=3&downloadCount=0",
+          "addonName=adblockcashchrome&addonVersion=1.4.1&application=chrome&applicationVersion=27.0&platform=chromium&platformVersion=12.0&lastVersion=3&downloadCount=0",
           "The correct parameters are sent to the server");
   });
 
