@@ -34,7 +34,7 @@
     {
       // Force default position
       if (usingShim)
-        toolbox.removeAttribute("abp-iconposition");
+        toolbox.removeAttribute("abc-iconposition");
 
       if (UI.isToolbarIconVisible(wnd))
         UI.toggleToolbarIcon();
@@ -49,17 +49,17 @@
   test("Put icon at default position", function()
   {
     UI.toggleToolbarIcon();
-    let placement = CustomizableUI.getPlacementOfWidget("abp-toolbarbutton");
+    let placement = CustomizableUI.getPlacementOfWidget("abc-toolbarbutton");
     ok(placement, "Button is visible");
     if (placement)
       equal(placement.area, defaultParent, "Button is at the right position");
 
     UI.toggleToolbarIcon();
-    placement = CustomizableUI.getPlacementOfWidget("abp-toolbarbutton");
+    placement = CustomizableUI.getPlacementOfWidget("abc-toolbarbutton");
     ok(!placement, "Button is invisible");
 
     UI.toggleToolbarIcon();
-    placement = CustomizableUI.getPlacementOfWidget("abp-toolbarbutton");
+    placement = CustomizableUI.getPlacementOfWidget("abc-toolbarbutton");
     ok(placement, "Button is visible");
     if (placement)
       equal(placement.area, defaultParent, "Button is at the right position again");
@@ -75,18 +75,18 @@
 
     UI.toggleToolbarIcon();
 
-    CustomizableUI.addWidgetToArea("abp-toolbarbutton", CustomizableUI.AREA_TABSTRIP);
-    let placement = CustomizableUI.getPlacementOfWidget("abp-toolbarbutton");
+    CustomizableUI.addWidgetToArea("abc-toolbarbutton", CustomizableUI.AREA_TABSTRIP);
+    let placement = CustomizableUI.getPlacementOfWidget("abc-toolbarbutton");
     ok(placement, "Button is visible");
     if (placement)
       equal(placement.area, CustomizableUI.AREA_TABSTRIP, "Button is in tabstrip");
 
     UI.toggleToolbarIcon();
-    placement = CustomizableUI.getPlacementOfWidget("abp-toolbarbutton");
+    placement = CustomizableUI.getPlacementOfWidget("abc-toolbarbutton");
     ok(!placement, "Button is invisible");
 
     UI.toggleToolbarIcon();
-    placement = CustomizableUI.getPlacementOfWidget("abp-toolbarbutton");
+    placement = CustomizableUI.getPlacementOfWidget("abc-toolbarbutton");
     ok(placement, "Button is visible");
     if (placement)
       equal(placement.area, CustomizableUI.AREA_NAVBAR, "Button is at default position");
