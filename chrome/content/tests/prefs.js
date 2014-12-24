@@ -18,7 +18,7 @@
     if ("chrome" in window)
       return name in localStorage;
     else
-      return Services.prefs.prefHasUserValue("extensions.adblockplus." + name);
+      return Services.prefs.prefHasUserValue("extensions.adblockcash." + name);
   }
 
   function checkPref(name, expectedValue, description)
@@ -37,7 +37,7 @@
     }
     else
     {
-      let pref = "extensions.adblockplus." + name;
+      let pref = "extensions.adblockcash." + name;
       switch (typeof expectedValue)
       {
         case "number":
