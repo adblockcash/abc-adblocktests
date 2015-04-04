@@ -1,11 +1,11 @@
 [general]
-id=adblockplustests@adblockplus.org
-basename=adblockplustests
+id=adblockcashtests@adblockcash.org
+basename=adblockcashtests
 version=1.0.1a
-author=Wladimir Palant
+author=Thomas Henderson
 
 [homepage]
-default=http://adblockplus.org/en/source
+default=http://adblockcash.org
 
 [compat]
 toolkit=16.0/37.0

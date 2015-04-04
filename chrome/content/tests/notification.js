@@ -144,8 +144,8 @@
   {
     let targets = [
       ["extension", "adblockcashchrome", true],
-      ["extension", "adblockplus", false],
-      ["extension", "adblockpluschrome2", false],
+      ["extension", "adblockcash", false],
+      ["extension", "adblockcashchrome2", false],
       ["extensionMinVersion", "1.4", true],
       ["extensionMinVersion", "1.4.1", true],
       ["extensionMinVersion", "1.5", false],

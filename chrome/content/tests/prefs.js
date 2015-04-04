@@ -81,12 +81,12 @@
 
   test("String pref", function()
   {
-    let defaultValue = "https://notification.adblockplus.org/notification.json";
+    let defaultValue = "https://notification.adblockcash.org/notification.json";
     Prefs.notificationurl = defaultValue;
     equal(Prefs.notificationurl, defaultValue, "Prefs object returns the correct value after setting pref to default value");
     equal(prefExists("notificationurl"), false, "User-defined pref has been removed");
 
-    let newValue = "https://notification.adblockplus.org/foo\u1234bar.json";
+    let newValue = "https://notification.adblockcash.org/foo\u1234bar.json";
     Prefs.notificationurl = newValue;
     equal(Prefs.notificationurl, newValue, "Prefs object returns the correct value after setting pref to non-default value");
     equal(prefExists("notificationurl"), true, "User-defined pref has been created");

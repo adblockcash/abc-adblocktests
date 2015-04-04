@@ -15,7 +15,7 @@ function require(module)
 {
   let result = {};
   result.wrappedJSObject = result;
-  Services.obs.notifyObservers(result, "adblockplus-require", module);
+  Services.obs.notifyObservers(result, "adblockcash-require", module);
   return result.exports;
 }
 
@@ -466,7 +466,7 @@ function showProfilingData(debuggerService)
   });
   scripts = scripts.filter(function(script)
   {
-    return script.fileName.indexOf("chrome://adblockplus/") == 0 && script.callCount > 0;
+    return script.fileName.indexOf("chrome://adblockcash/") == 0 && script.callCount > 0;
   });
   scripts.sort(function(a, b)
   {
@@ -497,7 +497,7 @@ function showProfilingDataForScript(script, table)
     functionName = guessFunctionName(script.fileName, script.baseLineNumber);
 
   let row = table.insertRow(-1);
-  row.insertCell(-1).innerHTML = functionName + "<br/>\n" + script.fileName.replace("chrome://adblockplus/", "") + ":" + script.baseLineNumber;
+  row.insertCell(-1).innerHTML = functionName + "<br/>\n" + script.fileName.replace("chrome://adblockcash/", "") + ":" + script.baseLineNumber;
   row.insertCell(-1).textContent = script.callCount;
   row.insertCell(-1).textContent = script.minExecutionTime.toFixed(2) + "/" + script.minOwnExecutionTime.toFixed(2);
   row.insertCell(-1).textContent = script.maxExecutionTime.toFixed(2) + "/" + script.maxOwnExecutionTime.toFixed(2);

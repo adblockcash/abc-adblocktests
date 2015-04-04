@@ -3,8 +3,8 @@
   module("I/O");
 
   let {FileUtils} = Cu.import("resource://gre/modules/FileUtils.jsm", null);
-  let file = FileUtils.getFile("TmpD", ["adblockplustests-test1.txt"]);
-  let fileRenamed = FileUtils.getFile("TmpD", ["adblockplustests-test2.txt"])
+  let file = FileUtils.getFile("TmpD", ["adblockcashtests-test1.txt"]);
+  let fileRenamed = FileUtils.getFile("TmpD", ["adblockcashtests-test2.txt"])
   let currentTest = -1;
 
   let tests = [
