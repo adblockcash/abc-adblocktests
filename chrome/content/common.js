@@ -1,7 +1,7 @@
-const Cc = Components.classes;
-const Ci = Components.interfaces;
-const Cr = Components.results;
-const Cu = Components.utils;
+const Cc = components.classes;
+const Ci = components.interfaces;
+const Cr = components.results;
+const Cu = components.utils;
 
 const MILLIS_IN_SECOND = 1000;
 const MILLIS_IN_MINUTE = 60 * MILLIS_IN_SECOND;
@@ -37,21 +37,21 @@ function getModuleGlobal(module)
 }
 
 let {Filter, InvalidFilter, CommentFilter, ActiveFilter, RegExpFilter,
-     BlockingFilter, WhitelistFilter, ElemHideBase, ElemHideFilter, ElemHideException} = require("filterClasses");
+     BlockingFilter, WhitelistFilter, ElemHideBase, ElemHideFilter, ElemHideException} = require("./filterClasses");
 let {Subscription, SpecialSubscription, RegularSubscription,
-     ExternalSubscription, DownloadableSubscription} = require("subscriptionClasses");
-let {defaultMatcher, Matcher, CombinedMatcher} = require("matcher");
-let {FilterListener} = require("filterListener");
-let {FilterNotifier} = require("filterNotifier");
-let {FilterStorage} = require("filterStorage");
-let {ElemHide} = require("elemHide");
-let {IO} = require("io");
-let {Notification} = require("notification");
-let {Prefs} = require("prefs");
-let {RequestNotifier} = require("requestNotifier");
-let {Synchronizer} = require("synchronizer");
-let {UI} = require("ui");
-let {Utils} = require("utils");
+     ExternalSubscription, DownloadableSubscription} = require("./subscriptionClasses");
+let {defaultMatcher, Matcher, CombinedMatcher} = require("./matcher");
+let {FilterListener} = require("./filterListener");
+let {FilterNotifier} = require("./filterNotifier");
+let {FilterStorage} = require("./filterStorage");
+let {ElemHide} = require("./elemHide");
+let {IO} = require("./io");
+let {Notification} = require("./notification");
+let {Prefs} = require("./prefs");
+let {RequestNotifier} = require("./requestNotifier");
+let {Synchronizer} = require("./synchronizer");
+let {UI} = require("./ui");
+let {Utils} = require("./utils");
 
 let geckoVersion = Services.appinfo.platformVersion;
 function compareGeckoVersion(version)
@@ -87,7 +87,7 @@ function prepareFilterComponents(keepListeners)
   try
   {
     // Disable timeline functions, they slow down tests otherwise
-    let {TimeLine} = require("timeline");
+    let {TimeLine} = require("./timeline");
 
     this._backup.timelineLog = TimeLine.log;
     this._backup.timelineEnter = TimeLine.enter;
@@ -118,7 +118,7 @@ function restoreFilterComponents()
 
   if ("timelineLeave" in this._backup)
   {
-    let {TimeLine} = require("timeline");
+    let {TimeLine} = require("./timeline");
 
     TimeLine.log = this._backup.timelineLog;
     TimeLine.enter = this._backup.timelineEnter;
@@ -259,7 +259,7 @@ function setupVirtualTime(processTimers)
           throw new Error("Test stuck in a download loop");
       }
 
-      if (nextTask.type == Components.interfaces.nsITimer.TYPE_ONE_SHOT)
+      if (nextTask.type == components.interfaces.nsITimer.TYPE_ONE_SHOT)
         scheduledTasks = scheduledTasks.filter(function(task) task != nextTask);
       else
         nextTask.nextExecution = currentTime + nextTask.delay;
@@ -276,7 +276,7 @@ function setupVirtualTime(processTimers)
     {
       if (task.nextExecution >= currentTime)
         newTasks.push(task);
-      else if (task.type != Components.interfaces.nsITimer.TYPE_ONE_SHOT)
+      else if (task.type != components.interfaces.nsITimer.TYPE_ONE_SHOT)
       {
         task.nextExecution = currentTime;
         newTasks.push(task);

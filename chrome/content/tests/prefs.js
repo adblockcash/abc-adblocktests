@@ -81,7 +81,7 @@
 
   test("String pref", function()
   {
-    let defaultValue = "https://notification.adblockcash.org/notification.json";
+    let defaultValue = "";
     Prefs.notificationurl = defaultValue;
     equal(Prefs.notificationurl, defaultValue, "Prefs object returns the correct value after setting pref to default value");
     equal(prefExists("notificationurl"), false, "User-defined pref has been removed");

@@ -40,13 +40,13 @@
     "HttpServer",
   ];
 
-  let {XPCOMUtils} = Components.utils.import("resource://gre/modules/XPCOMUtils.jsm", null);
+  let {XPCOMUtils} = components.utils.import("resource://gre/modules/XPCOMUtils.jsm", null);
 
-  const Cc = Components.classes;
-  const Ci = Components.interfaces;
-  const Cr = Components.results;
-  const Cu = Components.utils;
-  const CC = Components.Constructor;
+  const Cc = components.classes;
+  const Ci = components.interfaces;
+  const Cr = components.results;
+  const Cu = components.utils;
+  const CC = components.Constructor;
 
   const PR_UINT32_MAX = Math.pow(2, 32) - 1;
 
@@ -218,7 +218,7 @@
   /**
    * JavaScript constructors for commonly-used classes; precreating these is a
    * speedup over doing the same from base principles.  See the docs at
-   * http://developer.mozilla.org/en/docs/Components.Constructor for details.
+   * http://developer.mozilla.org/en/docs/components.Constructor for details.
    */
   const ServerSocket = CC("@mozilla.org/network/server-socket;1",
                           "nsIServerSocket",
@@ -396,7 +396,7 @@
   }
   nsHttpServer.prototype =
   {
-    classID: Components.ID("{54ef6f81-30af-4b1d-ac55-8ba811293e41}"),
+    classID: components.ID("{54ef6f81-30af-4b1d-ac55-8ba811293e41}"),
 
     // NSISERVERSOCKETLISTENER
 
@@ -792,7 +792,7 @@
       // Bug 508125: Add a GC here else we'll use gigabytes of memory running
       // mochitests. We can't rely on xpcshell doing an automated GC, as that
       // would interfere with testing GC stuff...
-      Components.utils.forceGC();
+      components.utils.forceGC();
     },
 
     /**
@@ -4016,7 +4016,7 @@
             dumpn("*** preamble copying complete " +
                   "[status=0x" + statusCode.toString(16) + "]");
 
-            if (!Components.isSuccessCode(statusCode))
+            if (!components.isSuccessCode(statusCode))
             {
               dumpn("!!! header copying problems: non-success statusCode, " +
                     "ending response");
@@ -4085,7 +4085,7 @@
             }
             else
             {
-              if (!Components.isSuccessCode(statusCode))
+              if (!components.isSuccessCode(statusCode))
                 dumpn("*** WARNING: non-success statusCode in onStopRequest");
 
               response.end();

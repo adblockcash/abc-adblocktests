@@ -28,7 +28,7 @@ function runTests(testFunc, cleanupFunc, finalizeFunc)
     }
 
     // Make sure garbage collection doesn't run during the test
-    Components.utils.forceGC();
+    components.utils.forceGC();
 
     let startTime = Date.now();
     testFunc();

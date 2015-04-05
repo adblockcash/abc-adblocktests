@@ -15,7 +15,7 @@
         module.wrappedJSObject = module;
         Services.obs.notifyObservers(module, "adblockcashtests-require", "info");
 
-        let {addonRoot} = module.exports;
+        let addonRoot = module.exports.addon.root;
         let uri = Services.io.newURI(addonRoot, null, null).QueryInterface(Components.interfaces.nsIJARURI);
 
         let result = [];

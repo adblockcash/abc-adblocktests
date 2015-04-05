@@ -1,6 +1,6 @@
 (function()
 {
-  let {application} = require("info");
+  let {application} = require("./info");
   if (application != "firefox")
     return;
 
@@ -14,11 +14,11 @@
   {
     usingShim = true;
     // No built-in CustomizableUI API, use our own implementation.
-    ({CustomizableUI}) = require("customizableUI");
+    ({CustomizableUI}) = require("./customizableUI");
   }
 
   let wnd = Utils.getChromeWindow(window);
-  let defaultParent = require("appSupport").defaultToolbarPosition.parent;
+  let defaultParent = require("./appSupport").defaultToolbarPosition.parent;
 
   let toolbox;
   if (usingShim)

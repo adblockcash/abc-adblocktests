@@ -4,7 +4,7 @@
   let randomResult = 0.5;
 
   let originalInfo;
-  let info = require("info");
+  let info = require("./info");
 
   module("Notification handling",
   {
@@ -24,8 +24,9 @@
       for (let key in info)
         originalInfo[key] = info[key];
 
-      info.addonName = "adblockcashchrome";
-      info.addonVersion = "1.4.1";
+      info.addon = {};
+      info.addon.name = "adblockcashchrome";
+      info.addon.version = "1.4.1";
       info.application = "chrome";
       info.applicationVersion = "27.0";
       info.platform = "chromium";
