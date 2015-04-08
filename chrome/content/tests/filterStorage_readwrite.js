@@ -120,7 +120,7 @@
 
       if (withExternal)
       {
-        let {adblockcash} = Cu.import(Cc["@adblockcash.org/abp/public;1"].getService(Ci.nsIURI).spec, null);
+        let {adblockcash} = Cu.import(Cc["@adblockplus.org/abp/public;1"].getService(Ci.nsIURI).spec, null);
         adblockcash.updateExternalSubscription("~external~external subscription ID", "External subscription", ["foo", "bar"]);
 
         let externalSubscriptions = FilterStorage.subscriptions.filter(function (subscription) subscription instanceof ExternalSubscription);

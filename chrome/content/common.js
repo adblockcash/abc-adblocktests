@@ -8,8 +8,8 @@ const MILLIS_IN_MINUTE = 60 * MILLIS_IN_SECOND;
 const MILLIS_IN_HOUR = 60 * MILLIS_IN_MINUTE;
 const MILLIS_IN_DAY = 24 * MILLIS_IN_HOUR;
 
-Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 
 function require(module)
 {
