@@ -43,7 +43,7 @@
         Prefs.enabled = true;
       setTimeout(function()
       {
-        is(element.getAttribute("abpstate"), "active", "Checking icon state when Adblock Cash is enabled");
+        is(element.getAttribute("abcstate"), "active", "Checking icon state when Adblock Cash is enabled");
         runNextTest();
       }, 0);
     }
@@ -54,7 +54,7 @@
         Prefs.enabled = false;
       setTimeout(function()
       {
-        is(element.getAttribute("abpstate"), "disabled", "Checking icon state when Adblock Cash is disabled");
+        is(element.getAttribute("abcstate"), "disabled", "Checking icon state when Adblock Cash is disabled");
         runNextTest();
       }, 0);
     }
@@ -66,7 +66,7 @@
         Prefs.enabled = true;
       setTimeout(function()
       {
-        is(element.getAttribute("abpstate"), "whitelisted", "Checking icon state with site whitelisting");
+        is(element.getAttribute("abcstate"), "whitelisted", "Checking icon state with site whitelisting");
         FilterStorage.removeFilter(Filter.fromText("@@|chrome://mochikit/$document"));
         runNextTest();
       }, 0);
