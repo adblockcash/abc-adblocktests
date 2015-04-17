@@ -180,15 +180,15 @@
     compareFilter("blabla", ["type=filterlist", "text=blabla", "regexp=blabla"]);
     compareFilter("blabla_default", ["type=filterlist", "text=blabla_default", "regexp=blabla_default"], function(filter)
     {
-      filter.disabled = false;
-      filter.hitCount = 0;
-      filter.lastHit = 0;
+      filter.setDisabled(false);
+      filter.setHitCount(0);
+      filter.setLastHit(0);
     });
     compareFilter("blabla_non_default", ["type=filterlist", "text=blabla_non_default", "regexp=blabla_non_default", "disabled=true", "hitCount=12", "lastHit=20"], function(filter)
     {
-      filter.disabled = true;
-      filter.hitCount = 12;
-      filter.lastHit = 20;
+      filter.setDisabled(true);
+      filter.setHitCount(12);
+      filter.setLastHit(20);
     });
   });
 
